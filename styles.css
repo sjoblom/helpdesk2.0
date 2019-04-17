@@ -1,0 +1,419 @@
+body {
+	background-color: #F7F7F7;
+	font-family: sans-serif;
+	font-size: 1.2vw;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+	grid-template-rows: 16vh auto 20vh;
+  grid-gap: 0.5em;
+  padding: 0.5em;
+  width: 97vw;
+  height: 94vh;
+}
+
+.grid-container > div {
+	overflow-y: scroll;
+}
+
+.item1 {
+grid-row: 1 / span 1;
+}
+.item2 {
+	grid-row: 2 / span 2;
+}
+.item3 {
+	grid-row: 1 / span 2;
+}
+.item4 {
+	grid-row: 3 / span 1;
+}
+.item5 {
+	grid-row: 1 / span 1;
+}
+.item6 {
+	grid-row: 2 / span 2;
+  display: grid;
+  grid-template-columns: 50% auto;
+	grid-template-rows: 6vh auto;
+	grid-gap: 0 0.5em;
+}
+
+.item1 form{
+  display: grid;
+  grid-template-columns: auto 80px;
+	width:100%;
+	height: 16vh;
+	grid-gap: 0.5em;
+}
+
+#helpdesk-logo {
+  display: grid;
+  grid-template-columns: 8vh auto;
+	width:100%;
+}
+
+#helpdesk-logo img {
+	grid-row: 1 / span 2;
+	width:100%;
+	margin: auto;
+}
+
+.item4 form {
+  display: grid;
+  grid-template-columns: auto 8vw;
+	width:100%;
+	height:100%;
+	grid-gap: 0.5em;
+}
+
+#action-menu {
+	grid-column: 1 / span 2;
+  display: grid;
+  grid-template-columns: auto auto;
+	grid-gap: 0.5em;
+	background-color: grey;
+	padding: 1vh;
+}
+
+#action-menu select {
+	grid-column: 1 / span 2;
+}
+
+#helpdesk-logo {
+	font-size: 200%;
+	font-weight: lighter;
+	margin-bottom: auto;
+}
+
+#helpdesk-agent  {
+	font-size: 40%;
+	font-weight: lighter;
+}
+
+#ticket-count {
+	width: 40px;
+	height: 20px;
+	line-height:20px;
+	text-align: center;
+	background: green;
+	font-weight: bold;
+	border-style: solid;
+	border-width: medium;
+	border-color: white;
+	border-radius: 1vw;
+	color: white;
+	padding:5px;
+	margin: auto;
+}
+
+#customer-information {
+	margin-top: 3vh;
+	width: 100%;
+	background-color: white;
+	border:none;
+	font-size: 100%;
+}
+
+#customer-information td, #customer-information th {
+	text-align: center;
+	vertical-align: middle;
+	padding: 0.8vw;
+}
+
+#customer-information th {
+	background-color: #5E5E5E;
+	color:white;
+}
+
+#customer-information tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+#customer-information ul {
+	text-align: left;
+	margin: 0;
+	padding-left: 0.5em;
+}
+
+#customer-information ul {
+	line-height: 1.5em;
+}
+
+#customer-information td:nth-child(odd) {
+	background-color: grey;
+	color:white;
+	font-size: 90%;
+	width:30%;
+}
+
+button {
+	width: 100%;
+	height: 5vw;
+	background-color:#D92B85;
+	color:white;
+	font-weight: bold;
+	border-style: solid;
+	border-width: medium;
+	border-color: #5E5E5E;
+	border-radius: 0.5vw;
+	font-size:100%;
+	cursor: pointer;
+}
+
+input[type=submit] {
+	background-color: #99195E;
+	color:white;
+	font-weight: bold;
+	border-style: solid;
+	border-width: medium;
+	border-color: #5E5E5E;
+	font-size:100%;
+	border-radius: 0.5vw;
+	cursor: pointer;
+}
+
+#next-button input[type=submit] {
+	width: 100%;
+	height: 16vh;
+	font-size: 200%;
+}
+
+input[type=text], textarea, input[type=date], input[type=number]{
+	background-color: white;
+	border-style: solid;
+	border-width: medium;
+	border-color: grey;
+	border-radius: 0.5vw;
+	font-size:100%;
+	padding: 0.5em;
+	font-family: sans-serif;
+}
+
+textarea {
+	font-size: 130%;
+}
+
+input[type=submit]:hover, button:hover, .action-options label:hover {
+	border-color: #2D2D2D;
+	background-color: #8A1856;
+}
+
+button:hover, .action-options label:hover {
+	background-color: #B72470;
+}
+
+input[type=reset]:hover {
+	background-color: #2D2D2D;
+	color: white;
+}
+
+input[type=submit]:active, button:active, .action-options label:active, input[type=reset]:active {
+	background: #2D2D2D;
+}
+
+select {
+	width: 90%;
+	background-color: #5E5E5E;
+	color:white;
+	border-style: solid;
+	border-width: medium;
+	border-color: #5E5E5E;
+	border-radius: 0.5vw;
+	font-size: 100%;
+	height: 6vh;
+	margin: 1vh auto;
+	cursor: pointer;
+}
+
+.action-form-container {
+	grid-column: 1 / span 2;
+	display:none;
+	background-color: grey;
+	text-align:center;
+	font-size: 100%;
+	font-weight: bold;
+	color:white;
+	border-radius: 0.5vw;
+}
+
+.action-title {
+	font-size: 120%;
+	font-weight: bold;
+	color:white;
+	margin: 0.6em 0;
+}
+
+input[type=reset] {
+	background-color: #5E5E5E;
+	border-color: #D6D5D5;
+	color: #D6D5D5;
+	border-style: solid;
+	border-width: medium;
+	border-color: grey;
+	border-radius: 0.5vw;
+	cursor: pointer;
+}
+
+.action-form-container input[type=reset], .action-form-container input[type=submit] {
+	margin: 1em 0;
+	height: 60px;
+	font-size: 100%;
+}
+
+.action-form-container form{
+  display: grid;
+  grid-template-columns: auto auto;
+	grid-gap: 0.5em;
+	padding: 0.5em;
+}
+
+.action-title, .action-form-container input[type=number], .action-options {
+	grid-column: 1 / span 2;
+}
+
+.interaction {
+	text-align: left;
+	background-color:white;
+	border-style: solid;
+	border-width: medium;
+	border-color: white;
+	border-radius: 1vw;
+	margin:0.6vh;
+	display: inline-block;
+	max-width: 80%;
+}
+
+.interaction p {
+	margin:0;
+	padding: 1.5vh 1vw;
+	line-height: 130%;
+}
+
+.message-details {
+	text-align: right;
+	font-size: 60%;
+	margin-right: 0.5vw;
+	margin-bottom: 0.5vh;
+}
+
+.from-customer {
+	float: left;
+	border-color: #F2F2F2;
+}
+.to-customer {
+	float: right;
+	background-color: #FFF2F7;
+}
+.comment, .event {
+	background-color: #E1E1E1;
+	width: 60%;
+}
+
+#conversation {	text-align: center;}
+
+div.ui-datepicker
+{
+    font-size:105%;
+}
+
+.datepicker {
+	margin:auto;
+	grid-column: 1 / span 2;
+}
+
+#calendar {
+	margin-top: 1em;
+	font-size:110%;
+}
+
+a {
+	color: black;
+}
+
+.action-options {
+  display: grid;
+  grid-template-columns: 50% 50%;
+	width:100%;
+	grid-gap: 0.5em;
+}
+
+.action-options input {
+	display: none;
+}
+
+.action-options label {
+	background-color:#D92B85;
+	color:white;
+	font-weight: bold;
+	border-style: solid;
+	border-width: medium;
+	border-color: #5E5E5E;
+	border-radius: 0.5vw;
+	font-size:100%;
+	padding: 0.5em;
+	cursor: pointer;
+}
+
+.action-options input[type="radio"]:checked + label,
+.Checked + label {
+	background-color: #2D2D2D;
+}
+
+td.period-start a {background: #E7220C !important; color: white !important;}
+td.menstruation a {background: #FF968D !important; }
+td.fertile a {background: #FF8DC6 !important; }
+td.very-fertile a {background: #EF5FA7 !important; }
+td.most-fertile a {background: #99195E !important; color: white !important;}
+td.ovulation a {background: #FF8DC6 !important; color: white !important;}
+td.next-period-start a {background: #E7220C !important; color: white !important;}
+
+.menu-tab-button {
+	background-color: grey;
+	border:0;
+	height: 7vh;
+	color: #D6D5D5;
+}
+
+.menu-tab-button:hover {
+	color: white;
+	background-color: grey;
+}
+.menu-tab-button:active {
+	color: black;
+}
+
+#menu-tab-button-responses {
+	background-color: #5E5E5E;
+}
+
+#menu-tab-button-responses:hover {
+	background-color: #5E5E5E;
+}
+
+#responses-container {
+	grid-column: 1 / span 2;
+	display:none;
+	background-color: #5E5E5E;
+	padding: 0;
+	text-align: center;
+}
+
+#responses-container input {
+	width:80%;
+	margin: 2vh 0;
+}
+
+#responses-container button{
+	height: 7vh;
+	width: 21vw;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  text-overflow: ellipsis;
+	margin: 1vh auto;
+	border-color: #525252;
+}
+

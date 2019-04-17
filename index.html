@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			Lily HelpDesk
+		</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="styles.css">
+		
+		<script
+ 	 	src="https://code.jquery.com/jquery-3.3.1.min.js"
+  	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  	crossorigin="anonymous"></script>
+				<script
+				  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+				  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+				  crossorigin="anonymous"></script>
+		<script src="scripts.js"></script>
+		<script src="responses.js"></script>
+
+	</head>
+	<body>
+		<div class="grid-container">
+			<div class="item1">
+				<form action="/" id="search-form" name="search-form">
+					<div id="helpdesk-logo">
+						<img src="helpdesk-logo.png" alt="Lily Health Logo">
+						<div>
+							HelpDesk
+						</div>
+						<div id="helpdesk-agent">
+							Emil | <a href="/logout">Logout</a>
+						</div>
+					</div>
+					<div id="ticket-count">
+						321
+					</div><input name="customer_id" type="number" placeholder="Customer ID" min="1" max="1000000" maxlength="6" required=""> <input type="submit" value="Search">
+				</form>
+			</div>
+			<div class="item2">
+				<table id="customer-information">
+					<tr>
+						<th colspan="2">
+							Customer 5432
+						</th>
+					</tr>
+					<tr style="display:none;">
+						<td>
+							Subscription
+						</td>
+						<td>
+							On
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Purchase
+						</td>
+						<td>
+							Paid<br>
+							<small>1 month for 99</small>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Desire
+						</td>
+						<td>
+							Want Pregnancy
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Phase
+						</td>
+						<td>
+							Menstruation
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Cycle
+						</td>
+						<td>
+							10 of 28<br>
+							<small>From: 1 April -	To: 28 April</small>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Had Sex
+						</td>
+						<td>
+							Yes
+						</td>
+					</tr>
+					<tr style="display:none;">
+						<td>
+							Contraception
+						</td>
+						<td>
+							Injection<br>
+							<small>From: 1 Aug - To: 22 July</small>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Pregnancy Test
+						</td>
+						<td>
+							Negative<br>
+							<small>On: 3 April</small>
+						</td>
+					</tr>
+					<tr style="display:none;">
+						<td>
+							Health Conditions
+						</td>
+						<td>
+							<ul>
+								<li>Overweight, <small>2 April</small></li>
+								<li>Cysts, <small>2 Feb</small></li>
+								<li>History of Miscarriages, <small>22 Jan</small></li>
+							</ul>
+						</td>
+					</tr>
+				</table>
+				<div id="calendar">
+					<script>
+						// ALL THE DATES THAT SHOULD BE HIGHLIGHTED IN THE CALENDAR AND THEIR STYLING CLASS
+						var highlighted_dates = {
+						    '2019/4/1': 'period-start',
+						    '2019/4/2': 'menstruation',
+								'2019/4/3': 'menstruation',
+								'2019/4/4': 'menstruation',
+								'2019/4/5': 'menstruation',
+								'2019/4/6': 'menstruation',
+								'2019/4/10': 'fertile',
+								'2019/4/11': 'very-fertile',
+								'2019/4/12': 'very-fertile',
+								'2019/4/13': 'most-fertile',
+								'2019/4/14': 'very-fertile',
+								'2019/4/15': 'ovulation',
+								'2019/4/28': 'next-period-start',
+						  };	
+					</script>
+				</div>
+			</div>
+			<div class="item3" id="conversation">
+				<div class="interaction message from-customer">
+					<p>
+						Hi Lily, I have a question for you. What is the weather today?
+					</p>
+					<div class="message-details">
+						12:44 | 21 Apr 2018
+					</div>
+				</div>
+				<div class="interaction message to-customer">
+					<p>
+						Hi dear, today it's a bit cloudy and it might be rain in the afternoon so please bring an umbrella if you go out.
+					</p>
+					<div class="message-details">
+						12:50 | 21 Apr 2018 | Lily
+					</div>
+				</div>
+				<div class="interaction event">
+					<p>
+						Customer desire changed to Want Pregnancy
+					</p>
+					<div class="message-details">
+						12:50 | 22 Apr 2018 | Lily
+					</div>
+				</div>
+				<div class="interaction comment">
+					<p>
+						I called this customer to ask her what she thought of the service.
+					</p>
+					<div class="message-details">
+						22:50 | 23 Apr 2018 | Emil
+					</div>
+				</div>
+				<div class="interaction message from-customer">
+					<p>
+						Hi Lily, I have a question for you. What is the weather today?
+					</p>
+					<div class="message-details">
+						12:44 | 21 Apr 2018
+					</div>
+				</div>
+				<div class="interaction message to-customer">
+					<p>
+						Hi dear, today it's a bit cloudy and it might be rain in the afternoon so please bring an umbrella if you go out.
+					</p>
+					<div class="message-details">
+						12:50 | 21 Apr 2018 | Lily
+					</div>
+				</div>
+				<div class="interaction event">
+					<p>
+						Customer desire changed to Want Pregnancy
+					</p>
+					<div class="message-details">
+						12:50 | 22 Apr 2018 | Lily
+					</div>
+				</div>
+				<div class="interaction comment">
+					<p>
+						I called this customer to ask her what she thought of the service.
+					</p>
+					<div class="message-details">
+						22:50 | 23 Apr 2018 | Emil
+					</div>
+				</div>
+			</div>
+			<div class="item4">
+				<form action="/">
+					<textarea id="response-message" name="message" type="text" placeholder="Write reponse message here" maxlength="3000" required="" autofocus=""></textarea> <input type="submit" value="Send">
+				</form>
+			</div>
+			<div class="item5">
+				<form action="/" id="next-button" name="next-button">
+					<input name="last-message-id" type="hidden" value="987654321"> <input type="submit" value="Next">
+				</form>
+			</div>
+			<div class="item6">
+				<button type="button" value="show-action-menu" class="menu-tab-button" id="menu-tab-button-actions">Actions</button>
+				<button type="button" value="show-action-menu" class="menu-tab-button" id="menu-tab-button-responses">Responses</button>
+				<div id="action-menu">
+					<button type="button" value="action-form-new-cycle">New Cycle</button>
+					<button type="button" value="action-form-change-desire">Change Desire</button>
+					<button type="button" value="action-form-had-sex">Had Sex</button>
+					<button type="button" value="action-form-pregnancy-test">Pregnancy Test</button>
+					<button type="button" value="action-form-change-cycle-start-date">Change Cycle Start Date</button>
+					<button type="button" value="action-form-change-cycle-length">Change Cycle Length</button>
+					<button type="button" value="action-form-set-menstruation-end-date">Menstruation End Date</button>
+					<button type="button" value="action-form-add-health-condition">Add Health Condition</button>
+					<button type="button" value="action-form-remove-health-condition">Remove Health Condition </button>
+					<button type="button" value="action-form-change-subscription-status">Stop Subsciption</button>
+					<select>
+						<option>
+							Other Actions
+						</option>
+						<option>
+							Change Language
+						</option>
+						<option>
+							Subscription On/Off
+						</option>
+						<option>
+							New Purchase
+						</option>
+					</select>
+				</div>
+				
+				<div class="action-form-container" id="action-form-new-cycle">
+					<form action="/">
+						<div class="action-title">New Cycle</div>
+						<div class="datepicker"></div>
+						<input type="hidden" name="cycle-start-date" required>
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay">
+					</form>
+				</div>
+				
+				<div class="action-form-container" id="action-form-change-desire">
+					<form action="/">
+						<div class="action-title">Change Desire</div>
+						<div class="action-options">
+							    <input type="radio" value="want-pregnancy" name="new-desire" id="change-desire-want-pregnancy" required />
+							    <label for="change-desire-want-pregnancy">Want Pregnancy</label>
+
+							    <input type="radio" value="avoid-pregnancy" name="new-desire" id="change-desire-avoid-pregnancy"/>
+							    <label for="change-desire-avoid-pregnancy">Avoid Pregnancy</label>
+
+							    <input type="radio" value="is-pregnant" name="new-desire" id="change-desire-is-pregnant"/>
+							    <label for="change-desire-is-pregnant">Is Pregnant</label>
+
+							    <input type="radio" value="irregular-period" name="new-desire" id="change-desire-irregular-period"/>
+							    <label for="change-desire-irregular-period">Irregular Period</label>
+
+							    <input type="radio" value="postnatal" name="new-desire" id="change-desire-postnatal"/>
+							    <label for="change-desire-postnatal">Postnatal</label>
+
+							    <input type="radio" value="help-after-miscarriage" name="new-desire" id="change-desire-help-after-miscarriage"/>
+							    <label for="change-desire-help-after-miscarriage">Help After Miscarriage</label>
+
+						</div>
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay">
+					</form>
+				</div>
+				
+				<div class="action-form-container" id="action-form-had-sex">
+					<form action="/">
+						<div class="action-title">Had Sex</div>
+						
+						<div class="action-options">
+
+							    <input type="radio" id="had-sex-yes" name="had-sex" value="yes" required/>
+							    <label for="had-sex-yes">Yes</label>
+									
+							    <input type="radio" id="had-sex-no" name="had-sex" value="no"/>
+							    <label for="had-sex-no">No</label>
+
+						</div>
+						
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay">
+					</form>
+				</div>
+				
+				<div class="action-form-container" id="action-form-pregnancy-test">
+					<form action="/">
+						<div class="action-title">Pregnancy Test</div>
+						<div class="datepicker"></div>
+						<input type="hidden" name="pregnancy-test-date" required>
+						<div class="action-options">
+							
+							    <input type="radio" id="pregnancy-test-positive" name="pregnancy-test" value="positive"/>
+							    <label for="pregnancy-test-positive">Positive</label>
+
+							    <input type="radio" id="pregnancy-test-unclear" name="pregnancy-test" value="unclear"/>
+							    <label for="pregnancy-test-unclear">Unclear</label>
+
+						</div>
+						
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay">
+					</form>
+				</div>
+				
+				<div class="action-form-container" id="action-form-change-cycle-start-date">
+					<form action="/">
+						<div class="action-title">Change Cycle Start Date</div>
+						<div class="datepicker"></div>
+						<input type="hidden" name="cycle-start-date" required>
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay">
+					</form>
+				</div>
+				
+				<div class="action-form-container" id="action-form-change-cycle-length">
+					<form action="/">
+						<div class="action-title">Change Cycle Length</div>
+						<input type="number" name="cycle-length" min="21" max="35" required>
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay">
+					</form>
+				</div>
+				
+				<div class="action-form-container" id="action-form-set-menstruation-end-date">
+					<form action="/">
+						<div class="action-title">Set Menstruation End Date</div>
+						<div class="datepicker"></div>
+						<input type="hidden" name="menstruation-end-date"  required>
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay">
+					</form>
+				</div>
+				
+				<div class="action-form-container" id="action-form-add-health-condition">
+					<form action="/">
+						<div class="action-title">Add Health Condition</div>
+						<div class="action-options">
+							
+							    <input type="radio" value="pcos" name="health-condition" id="add-health-condition-pcos" required/>
+							    <label for="add-health-condition-pcos">PCOS</label>
+
+							    <input type="radio" value="blocked-tubes" name="health-condition" id="add-health-condition-blocked-tubes" />
+							    <label for="add-health-condition-blocked-tubes">Blocked Tubes</label>
+
+							    <input type="radio" value="fibroids" name="health-condition" id="add-health-condition-fibroids" />
+							    <label for="add-health-condition-fibroids">Fibroids</label>
+
+							    <input type="radio" value="cysts" name="health-condition" id="add-health-condition-cysts" />
+							    <label for="add-health-condition-cysts">Cysts</label>
+
+							    <input type="radio" value="history-of-miscarriages" name="health-condition" id="add-health-condition-history-of-miscarriages" />
+							    <label for="add-health-condition-history-of-miscarriages">History of Miscarriages</label>
+
+							    <input type="radio" value="single-miscarriage-in-past" name="health-condition" id="add-health-condition-single-miscarriage-in-past" />
+							    <label for="add-health-condition-single-miscarriage-in-past">Single Miscarriage in Past</label>
+
+							    <input type="radio" value="long-delayed-periods" name="health-condition" id="add-health-condition-long-delayed-periods" />
+							    <label for="add-health-condition-long-delayed-periods">Long Delayed Periods</label>
+
+							    <input type="radio" value="ectopic-pregnancy" name="health-condition" id="add-health-condition-ectopic-pregnancy" />
+							    <label for="add-health-condition-ectopic-pregnancy">Ectopic Pregnancy</label>
+
+							    <input type="radio" value="overweight" name="health-condition" id="add-health-condition-overweight" />
+							    <label for="add-health-condition-overweight">Overweight</label>
+
+							    <input type="radio" value="hormone-imbalance" name="health-condition" id="add-health-condition-hormone-imbalance" />
+							    <label for="add-health-condition-hormone-imbalance">Hormone Imbalance</label>
+
+							    <input type="radio" value="endometriosis" name="health-condition" id="add-health-condition-endometriosis" />
+							    <label for="add-health-condition-endometriosis">Endometriosis</label>
+
+							    <input type="radio" value="old-age" name="health-condition" id="add-health-condition-old-age" />
+							    <label for="add-health-condition-old-age">Old Age</label>
+
+							    <input type="radio" value="partner-is-unavailable" name="health-condition" id="add-health-condition-partner-is-unavailable" />
+							    <label for="add-health-condition-partner-is-unavailable">Partner is Unavailable</label>
+
+							    <input type="radio" value="unplanned-pregnancy" name="health-condition" id="add-health-condition-unplanned-pregnancy" />
+							    <label for="add-health-condition-unplanned-pregnancy">Unplanned Pregnancy</label>
+							
+						</div>
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay">
+					</form>
+				</div>
+				
+				<div class="action-form-container" id="action-form-remove-health-condition">
+					<form action="/">
+						<div class="action-title">Remove Health Condition</div>
+						<div class="action-options">
+							
+							    <input type="radio" value="pcos" name="health-condition" id="remove-health-condition-pcos" required/>
+							    <label for="remove-health-condition-pcos">PCOS</label>
+
+							    <input type="radio" value="blocked-tubes" name="health-condition" id="remove-health-condition-blocked-tubes" />
+							    <label for="remove-health-condition-blocked-tubes">Blocked Tubes</label>
+
+							    <input type="radio" value="fibroids" name="health-condition" id="remove-health-condition-fibroids" />
+							    <label for="remove-health-condition-fibroids">Fibroids</label>
+
+							    <input type="radio" value="cysts" name="health-condition" id="remove-health-condition-cysts" />
+							    <label for="remove-health-condition-cysts">Cysts</label>
+
+							    <input type="radio" value="history-of-miscarriages" name="health-condition" id="remove-health-condition-history-of-miscarriages" />
+							    <label for="remove-health-condition-history-of-miscarriages">History of Miscarriages</label>
+
+							    <input type="radio" value="single-miscarriage-in-past" name="health-condition" id="remove-health-condition-single-miscarriage-in-past" />
+							    <label for="remove-health-condition-single-miscarriage-in-past">Single Miscarriage in Past</label>
+
+							    <input type="radio" value="long-delayed-periods" name="health-condition" id="remove-health-condition-long-delayed-periods" />
+							    <label for="remove-health-condition-long-delayed-periods">Long Delayed Periods</label>
+
+							    <input type="radio" value="ectopic-pregnancy" name="health-condition" id="remove-health-condition-ectopic-pregnancy" />
+							    <label for="remove-health-condition-ectopic-pregnancy">Ectopic Pregnancy</label>
+
+							    <input type="radio" value="overweight" name="health-condition" id="remove-health-condition-overweight" />
+							    <label for="remove-health-condition-overweight">Overweight</label>
+
+							    <input type="radio" value="hormone-imbalance" name="health-condition" id="remove-health-condition-hormone-imbalance" />
+							    <label for="remove-health-condition-hormone-imbalance">Hormone Imbalance</label>
+
+							    <input type="radio" value="endometriosis" name="health-condition" id="remove-health-condition-endometriosis" />
+							    <label for="remove-health-condition-endometriosis">Endometriosis</label>
+
+							    <input type="radio" value="old-age" name="health-condition" id="remove-health-condition-old-age" />
+							    <label for="remove-health-condition-old-age">Old Age</label>
+
+							    <input type="radio" value="partner-is-unavailable" name="health-condition" id="remove-health-condition-partner-is-unavailable" />
+							    <label for="remove-health-condition-partner-is-unavailable">Partner is Unavailable</label>
+
+							    <input type="radio" value="unplanned-pregnancy" name="health-condition" id="remove-health-condition-unplanned-pregnancy" />
+							    <label for="remove-health-condition-unplanned-pregnancy">Unplanned Pregnancy</label>
+
+						</div>
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay">
+					</form>
+				</div>
+				
+				<div class="action-form-container" id="action-form-change-subscription-status">
+					<form action="/">
+						<div class="action-title">Change Subscription Status</div>
+						<div class="action-options">
+
+							    <input type="radio" id="subscription-status-on" name="subscription-status" value="on"  required/>
+							    <label for="subscription-status-on">On</label>
+
+							    <input type="radio" id="subscription-status-off" name="subscription-status" value="off" />
+							    <label for="subscription-status-off">Off</label>
+
+						</div>
+						
+						<input type="reset" value="Cancel" />
+						<input type="submit" value="Okay" />
+					</form>
+				</div>
+				
+				<div id="responses-container">
+					<input type="text" id="response-search-field"  placeholder="Search">
+						<button value="Hello">Hello</button>
+						<button value="How are you?">How are you?</button>
+						<button value="Do you need help?">Do you need help with anyting today?</button>
+						<button value="Here are some easy steps to check for breast cancer">Breast Cancer</button>
+						<button value="To reduce weight you can do this">Overweight</button>
+				</div>
+				
+			</div>
+		</div>
+	</body>
+</html>
